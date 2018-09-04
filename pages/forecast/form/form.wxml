@@ -1,0 +1,44 @@
+<view class='page'>
+
+  <view class="page__hd">
+        <view class="page__title">填写检查单</view>
+        <view class="page__desc">请务必填写完整准确</view>
+  </view>
+
+  <view class="page__bd page__bd_spacing">
+    <view class="kind-list">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="kind-list__item">
+          <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" style='font-size=14pt' bindtap="kindToggle">
+            <view class="weui-flex__item">{{item.name}}</view>
+          </view>
+          <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+              <view class='cell-text'>
+                              
+                <van-cell-group>
+                  <van-field
+                    wx:for="{{item.items}}"
+                    value="{{ username }}"
+                    clearable
+                    label="{{item.name}}"
+                    placeholder="请输入数值"/>
+                </van-cell-group>
+                            
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class='cell-title'>tips:填写完毕才能生成报告和预测</view>
+
+    <view class='fullbtnview'>
+
+      <van-button type='primary' size="large" 
+      style='width:95%;margin-bottom: 15px;' bindtap='goToReport' plain>生成报告</van-button>
+
+    </view>
+
+  </view>
+</view>

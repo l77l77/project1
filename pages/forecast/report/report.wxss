@@ -1,0 +1,16 @@
+/* pages/forecast/report/report.wxss */
+.content {
+  padding: 20px;
+  font-size: 14px;
+  color: #8f8f8f
+}
+
+.fullbtnview{
+  width: 100%;
+  line-height: 15px;
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

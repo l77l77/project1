@@ -1,0 +1,28 @@
+<view class='page'>
+
+  <view class="page__hd">
+        <view class="page__title">我的报告</view>
+        <view class="page__desc">My report</view>
+  </view>
+
+  <view>
+    <van-panel title="情况">
+      <view class="content">在【数据删除】新时代中国特色社会主义的旗帜下您怎么可能会有问题呢</view>
+    </van-panel>
+    <van-panel title="原因">
+      <view class="content">我的天呐先生，您不要命了吗？</view>
+    </van-panel>
+    <van-panel title="建议">
+      <view class="content">如果您想看真话，请点击下面的按钮进行付费观看（要素察觉）</view>
+    </van-panel>
+  </view>
+
+  <view class='fullbtnview'>
+
+      <van-button type='primary' size="large" 
+      style='width:95%;margin-bottom: 15px;' bindtap='goToPay'>查看我的预测</van-button>
+
+    </view>
+
+</view>
+

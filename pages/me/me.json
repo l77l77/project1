@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#09BB07",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "van-cell": "../../dist/cell/index",
+    "van-cell-group": "../../dist/cell-group/index"
+  }
+}

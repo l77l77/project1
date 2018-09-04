@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class='index'>
+
+  <view class='swiper'>
+    <swiper
+        indicator-dots="true"
+        circular="true"
+        autoplay="true"
+        interval="3000"
+        duration="500"
+        style='height:400rpx'>
+      <block wx:for="{{swiperImg}}">
+        <swiper-item>
+          <image src='{{item}}' mode='scaleToFill'class='fullFather'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='blockColumn'>
+    <view class='blockItem' bindtap='goToKnowledge' style='background: #66ccff'>
+      <view class='blockRowtext'>医学常识</view>
+      <view class='blockRowtext2'>濒死无畏的挣扎^_^~~~~</view>
+    </view>
+    <view class='blockItem' bindtap='goToMustKnow' style='background: rgb(78, 230, 86)'>
+      <view class='blockRowtext'>检验须知</view>
+      <view class='blockRowtext2'>反正在这里你会亲眼看到自己会怎样接受审判</view>
+    </view>
+    <view class='blockItem' bindtap='goToKnowledge' style='background:#FF6633'>
+      <view class='blockRowtext'>你看你🐴呢</view>
+      <view class='blockRowtext2'>看你🐴呢看你🐴呢看你🐴呢</view>
+    </view>
+    <view class='blockItem' bindtap='goToKnowledge' style='background:#FFCC33'>
+      <view class='blockRowtext'>你流🍺</view>
+      <view class='blockRowtext2'>噼哩噼哩干杯🍻</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,34 @@
+<!--pages/forecast/forecast.wxml-->
+<view class='mainPage'>
+
+  <view class="page__hd">
+        <view class="page__title">样例示范</view>
+        <view class="page__desc">健康测试</view>
+  </view>
+
+  <view class='fullview' style='padding:0px'>
+
+    <view class='cell-title' style='padding: 0px 15px 15px;'>样例数值</view>
+    <van-cell-group>
+      <van-cell  wx:for="{{egList}}" 
+      title="{{item.title}}" value="{{item.value}}" label="参考值:{{item.label}}" 
+      border="{{item.border}}"/>
+    </van-cell-group>
+
+    <view class='cell-title'>分析结果</view>
+    <van-panel>
+      <view class='content'>噢啦噢啦噢啦噢啦噢啦噢啦噢啦！木大木大木大木大木大木大木大木大木大！</view>
+    </van-panel>
+
+  </view>
+
+  </view>
+
+ <view class='fullbtnview'>
+
+    <van-button type='primary' size="large" style='width:95%;margin-bottom: 15px;' bindtap='goToForm'>
+    填写我的检查单</van-button>
+
+  </view>
+
+

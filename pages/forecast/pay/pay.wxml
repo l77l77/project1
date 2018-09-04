@@ -1,0 +1,27 @@
+<!--pages/forecast/pay/pay.wxml-->
+<view>
+
+  <view class="page__hd">
+        <view class="page__title">请支付</view>
+        <view class="page__desc">( = ・ ω ・ =) </view>
+  </view>
+
+  <view>
+    <van-cell-group id="goodsList">
+      <van-cell wx:for="{{goods}}" title="{{item.name}}" label="无优惠" 
+      icon="exchange" value="{{item.price}}" />
+      <van-cell title="优惠券" icon="discount" value="别瞎点了反正没有的" is-link />
+    </van-cell-group>
+  </view>
+
+</view>
+
+  <view class='payment'>
+    <view class='payment-title'>
+      总金额:￥
+      <view id="price">{{sum}}</view>
+    </view>
+    <view class='payment-pay'>
+      <view id="payBtn" bindtap='tabpay'>支付</view>
+    </view>
+  </view>

@@ -1,0 +1,20 @@
+<!--pages/me/me.wxml-->
+<view class='page'>
+
+  <view class='infoRow'>
+    <view class='head'>
+      <image class='headImg' src='{{headUrl}}' mode='aspectFill'></image>
+    </view>
+    <view class='headTitle'>
+      {{id}}
+    </view>
+  </view>
+
+  <view class='listView'>
+    <van-cell-group>
+      <van-cell title="查看历史报告" bindtap="goToHistory" is-link />
+      <van-cell title="查看历史订单" bindtap="goToHistory" is-link />
+    </van-cell-group>
+  </view>
+
+</view>

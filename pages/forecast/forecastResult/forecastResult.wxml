@@ -1,0 +1,27 @@
+<!--pages/forecast/forecastResult/forecastResult.wxml-->
+<view class='page'>
+
+  <view class="page__hd">
+        <view class="page__title">我的预测</view>
+        <view class="page__desc">My forecast</view>
+  </view>
+
+  <view>
+    <van-panel title="预测结果">
+      <view class="content">【扁鹊三连】治不好了，没救了，等死吧</view>
+    </van-panel>
+  </view>
+
+  <view class='graph'>
+  <image style='border-top:1px solid #f8f8f8;border-bottom:1px solid #f8f8f8'
+    src='http://suo.im/57foPl'></image>
+  </view>
+
+  <view class='fullbtnview'>
+
+      <van-button type='primary' size="large" 
+      style='width:95%;margin-bottom: 15px;' bindtap='goToHome'>返回主页</van-button>
+
+  </view>
+
+</view>

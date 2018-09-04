@@ -1,0 +1,44 @@
+/* pages/forecast/forecast.wxss */
+
+.mainPage{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.row {
+  height: 44px;
+  margin-bottom: 15px;
+}
+
+.fullview{
+  width: 100%;
+  padding: 20px 15px 20px 15px;
+}
+
+.fullbtnview{
+  width: 100%;
+  line-height: 15px;
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cell-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(69,90,100,.6);
+  padding: 20px 15px 15px;
+}
+
+.content {
+  padding: 20px;
+  font-size: 16px;
+}
+
+

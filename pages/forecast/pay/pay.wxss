@@ -1,0 +1,46 @@
+/* pages/forecast/pay/pay.wxss */
+#goodsList{
+  padding: 20px 15px 15px
+}
+
+#price{
+  color: #09bb07;
+  font-size: 14pt;
+}
+
+#payBtn{
+  color: #ffffff;
+  font-size: 16pt;
+}
+
+.payment{
+  width: 100%;
+  height: 70px;
+  position:fixed; 
+  bottom:0;
+  display: flex;
+  flex-wrap: nowrap;
+  border-top: 1px solid #BBBBBB;
+  background-color: #09bb07;
+}
+
+.payment-title{
+  width: 70%;
+  height: 70px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items:center;
+  border-right: 1px solid #BBBBBB;
+  background-color: #ffffff;
+}
+
+.payment-pay{
+  width: 30%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center; 
+}
