@@ -8,10 +8,14 @@
         autoplay="true"
         interval="3000"
         duration="500"
-        style='height:400rpx'>
+        style='height:400rpx'
+        catchtap="onItemClick">
       <block wx:for="{{swiperImg}}">
         <swiper-item>
-          <image src='{{item}}' mode='scaleToFill'class='fullFather'></image>
+          <image src='{{item.url}}' mode='scaleToFill'class='fullFather'id='{{item.id}}'></image>
+          <view class='bottomImgText'id='{{item.id}}'>
+            <text style=' line-height: 30px;'>{{item.title}}</text>
+          </view>
         </swiper-item>
       </block>
     </swiper>
@@ -26,11 +30,7 @@
       <view class='blockRowtext'>检验须知</view>
       <view class='blockRowtext2'>反正在这里你会亲眼看到自己会怎样接受审判</view>
     </view>
-    <view class='blockItem' bindtap='goToKnowledge' style='background:#FF6633'>
-      <view class='blockRowtext'>你看你🐴呢</view>
-      <view class='blockRowtext2'>看你🐴呢看你🐴呢看你🐴呢</view>
-    </view>
-    <view class='blockItem' bindtap='goToKnowledge' style='background:#FFCC33'>
+    <view class='blockItem' bindtap='goToKnowledge' style='background:#FF9999'>
       <view class='blockRowtext'>你流🍺</view>
       <view class='blockRowtext2'>噼哩噼哩干杯🍻</view>
     </view>

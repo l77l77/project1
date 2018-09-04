@@ -8,9 +8,9 @@
     "pages/forecast/report/report",
     "pages/forecast/pay/pay",
     "pages/me/me",
-    "pages/me/login/login",
     "pages/forecast/forecastResult/forecastResult",
-    "pages/me/history/history"
+    "pages/me/history/history",
+    "pages/index/imgArticle/imgArticle"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,14 +28,14 @@
         "selectedIconPath": "image/icons/tabBar_home_s.png"
       },
       {
-        "text": "预知健康",
+        "text": "报告解读",
         "pagePath": "pages/forecast/forecast",
         "iconPath": "image/icons/tabBar_health.png",
         "selectedIconPath": "image/icons/tabBar_health_s.png"
       },
       {
-        "text": "我的",
-        "pagePath": "pages/me/me",
+        "text": "我的历史",
+        "pagePath": "pages/me/history/history",
         "iconPath": "image/icons/tabBar_me.png",
         "selectedIconPath": "image/icons/tabBar_me_s.png"
       }

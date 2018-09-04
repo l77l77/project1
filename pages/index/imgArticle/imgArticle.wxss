@@ -1,0 +1,42 @@
+/* pages/index/ImgArticle/imgArticle.wxss */
+.index{
+  height: 100%;
+  display: flex;
+  direction:column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+page{
+  background-color: #ffffff;
+}
+
+.h1{
+  font-size:18px;
+  font-weight:400;
+  margin-bottom:.9em;
+}
+
+.h2{
+  font-weight:400;
+  font-size:15px;
+  margin-bottom:.34em;
+}
+
+.p{
+  margin:0 0 .8em;
+}
+
+.section{
+  margin-bottom:1.5em;
+}
+
+.article{
+  padding:20px 15px;
+  font-size:15px;
+}
+
+.pt{
+  line-height: 20px
+}

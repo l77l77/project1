@@ -1,0 +1,68 @@
+<view class='index' style=' background-color: #ffffff'>
+
+  <view class='article' wx:if="{{id==1}}">
+    <view class='h1'>我是第一篇文章</view>
+    <view class='h2'>章标题</view>
+    <view class='section'>
+      <view class='p'>
+        <text class='pt'>
+          这里是正文。
+          
+          blablabla
+
+          《龙与虎》节选，请
+
+          说着，便在黑板上潦草地书写着。歪歪扭扭地写下了4、4、8这样的数字。
+
+          此时教室里的众人，已经是一片轻松气氛，只有坐在一边的龙儿，一脸严肃的表情。宛如剑客，或者者带枪的不良少年，总而言之，现在，此处有干劲之人，只有他一个了。他正在为班中气氛而担心。
+
+          修学旅行，对于龙儿来说，现在自己面对的是一个十分重要的局面。实乃梨与自己的关系能否恢复，除了这次以外，就再没有其他机会了。但尽管如此，班里其他人好像都一脸不耐烦的表情，似乎更多数的人都在一边小声地议论着，希望这次修学旅行取消似的。毕竟要在寒冬腊月去大雪山滑雪，结果肯定没有多少人想去。早知会变成这样，一开始不去下什么无聊的诅咒就好了。
+
+          「那么，现在就开始分组喽～在限定时间内将分组名册给我交上来就行了～！」
+
+          在感觉不到任何干劲的北村的一声号令下，大家从椅子上站起来，各自商量朝。「真是没办法啊」「啊，开始组吧！」顿时，这样的声音在教室中此起彼伏。
+
+          「那么，高须君当然是同我一组了！剩下的就是那个笨蛋了！」
+
+          能登迈着碎步，快速地朝着龙儿的座位走了过来（一点儿都不可爱！）。手指着因为意外而不能够去冲绳，在一边龇牙咧嘴翻白眼的春田。
+
+          「大导师也加入吧！」
+        </text>
+      </view>
+    </view>
+  </view>
+
+  <view class='article' wx:if="{{id==2}}">
+    <view class='h1'>我是第二篇文章</view>
+    <view class='section'>
+      <view class='p'>
+        <text class='pt'>
+          不想改需求不想改需求不想改需求
+
+          不想改需求不想改需求不想改需求
+          （↓得知要改需求的我↓）
+        </text>
+      </view>
+      <view class='p'>
+        <image src="https://pic1.zhimg.com/v2-0e91f859e3b065dc22fab25555fe5d78_b.gif" 
+        mode="aspectFit"style="height: 380px"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class='article' wx:if="{{id==3}}">
+    <view class='h1'>我是第三篇文章</view>
+    <view class='section'>
+      <view class='p'>
+        <text class='pt'>
+          。。。
+        </text>
+      </view>
+      <view class='p'>
+        <image src='https://pic2.zhimg.com/80/v2-8eb032bea933a15cb340aa124196fe6d_hd.jpg'
+          mode='aspectFit' style='height:2000px'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
