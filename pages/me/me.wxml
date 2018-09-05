@@ -1,4 +1,4 @@
-<!--pages/me/me.wxml-->
+﻿<!--pages/me/me.wxml-->
 <view class='page'>
 
   <view class='infoRow'>
@@ -9,6 +9,8 @@
       {{id}}
     </view>
   </view>
+
+
 
   <view class='listView'>
     <van-cell-group>
