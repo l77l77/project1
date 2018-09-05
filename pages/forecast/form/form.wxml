@@ -7,7 +7,7 @@
 
   <view class="page__bd page__bd_spacing">
     <view class="kind-list">
-      <block wx:for="{{list}}" wx:key="id">
+      <block wx:for="{{list}}" wx:key="id" wx:if="{{item.id<5}}">
         <view class="kind-list__item">
           <view id="{{item.id}}" class="weui-flex kind-list__item-hd {{item.open ? 'kind-list__item-hd_show' : ''}}" style='font-size=14pt' bindtap="kindToggle">
             <view class="weui-flex__item">{{item.name}}</view>
@@ -32,6 +32,30 @@
           </view>
         </view>
       </block>
+
+      <view class="kind-list__item">
+          <view id="{{list[5].id}}" class="weui-flex kind-list__item-hd {{list[5].open ? 'kind-list__item-hd_show' : ''}}" style='font-size=14pt' bindtap="kindToggle">
+            <view class="weui-flex__item">{{list[5].name}}</view>
+          </view>
+          <view class="kind-list__item-bd {{list[5].open ? 'kind-list__item-bd_show' : ''}}">
+            <view class="weui-cells {{list[5].open ? 'weui-cells_show' : ''}}">
+              <view class='cell-text'>
+
+                <picker bindchange="bindPickerChange" value="{{value}}" range="{{list[5].array}}">
+                  <van-cell-group>
+                    <van-field
+                      bind:input="fieldInput"
+                      value="{{list[5].array[list[5].value]}}"
+                      label="请选择性别"
+                      placeholder="{{list[5].array[list[5].value]}}"/>
+                  </van-cell-group>
+                </picker>
+                            
+              </view>
+            </view>
+          </view>
+        </view>
+      
     </view>
     <view class='cell-title'>tips:填写完毕才能生成报告和预测</view>
 
