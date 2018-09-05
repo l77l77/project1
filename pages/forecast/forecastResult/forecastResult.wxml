@@ -8,14 +8,14 @@
 
   <view>
     <van-panel title="预测结果">
-      <view class="content">【扁鹊三连】治不好了，没救了，等死吧</view>
+      <view class="content">根据检测结果，您可能有以下病症：xxxxxxx</view>
     </van-panel>
   </view>
 
-  <view class='graph'>
+  <!-- <view class='graph'>
   <image style='border-top:1px solid #f8f8f8;border-bottom:1px solid #f8f8f8'
     src='http://suo.im/57foPl'></image>
-  </view>
+  </view> -->
 
   <view class='fullbtnview'>
 

@@ -30,9 +30,9 @@
       <view class='blockRowtext'>检验须知</view>
       <view class='blockRowtext2'>反正在这里你会亲眼看到自己会怎样接受审判</view>
     </view>
-    <view class='blockItem' bindtap='goToKnowledge' style='background:#FF9999'>
-      <view class='blockRowtext'>你流🍺</view>
-      <view class='blockRowtext2'>噼哩噼哩干杯🍻</view>
+    <view class='blockItem' bindtap='goToGuide' style='background:#FF9999'>
+      <view class='blockRowtext'>使用指南</view>
+      <view class='blockRowtext2'>点击查看本程序的使用方法</view>
     </view>
   </view>
 

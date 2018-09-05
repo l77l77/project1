@@ -1,7 +1,7 @@
 <!--pages/me/history/history.wxml-->
 <view>
   <view class="page__hd">
-    <view class="page__title">历史报告/订单</view>
+    <view class="page__title">历史报告</view>
     <view class="page__desc">点击以查看详情</view>
   </view>
 

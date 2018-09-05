@@ -19,7 +19,9 @@
                 <van-cell-group>
                   <van-field
                     wx:for="{{item.items}}"
+                    bind:input="fieldInput"
                     value="{{ username }}"
+                    id="{{item.id}}"
                     clearable
                     label="{{item.name}}"
                     placeholder="请输入数值"/>

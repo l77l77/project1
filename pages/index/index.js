@@ -39,6 +39,12 @@ Page({
     })
   },
 
+  goToGuide:function(){
+    wx.navigateTo({
+      url: './imgArticle/imgArticle?id=guide',
+    })
+  },
+
   onItemClick: function(e){
     wx.navigateTo({
       url: './imgArticle/imgArticle?id='+e.target.id,

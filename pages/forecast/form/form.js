@@ -4,16 +4,18 @@ Page({
     list: [
       {
         name: '有核红细胞类',
-        id: '1',
+        id: '0',
         open: false,
         items:
         [
           {
             name:'有核红细胞绝对值(10^9/L)',
+            id:'00',
             value:null,
           },
           {
             name:'有核红细胞百分比(%)',
+            id:'01',
             value:null,
           }
         ],
@@ -21,16 +23,18 @@ Page({
 
       {
         name: '红细胞类',
-        id: '2',
+        id: '1',
         open: false,
         items:
           [
             {
               name: '红细胞绝对值(10^9/L)',
+              id:'10',
               value: null,
             },
             {
               name: '红细胞百分比(%)',
+              id:'11',
               value: null,
             }
           ],
@@ -45,6 +49,15 @@ Page({
     wx.navigateTo({
       url: '../report/report',
     })
+  },
+
+  fieldInput:function(e){
+    console.log(e)
+    var fatherId=e.target.id[0]
+    var itemId = e.target.id[1]
+    this.data.list[fatherId].items[itemId].value=e.detail
+    var newlist=this.data.list
+    this.setData({list:newlist})
   },
 
 

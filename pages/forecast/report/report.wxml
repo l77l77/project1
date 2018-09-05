@@ -7,14 +7,14 @@
 
   <view>
     <van-panel title="情况">
-      <view class="content">在【数据删除】新时代中国特色社会主义的旗帜下您怎么可能会有问题呢</view>
+      <view class="content">xx项较正常值偏低；xx值较正常值偏高</view>
     </van-panel>
     <van-panel title="原因">
-      <view class="content">我的天呐先生，您不要命了吗？</view>
+      <view class="content">根据异常项获取原因</view>
     </van-panel>
-    <van-panel title="建议">
+    <!-- <van-panel title="建议">
       <view class="content">如果您想看真话，请点击下面的按钮进行付费观看（要素察觉）</view>
-    </van-panel>
+    </van-panel> -->
   </view>
 
   <view class='fullbtnview'>
