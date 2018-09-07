@@ -47,7 +47,8 @@
                       bind:input="fieldInput"
                       value="{{list[5].array[list[5].value]}}"
                       label="请选择性别"
-                      placeholder="{{list[5].array[list[5].value]}}"/>
+                      placeholder="{{list[5].array[list[5].value]}}"
+                      disabled/>
                   </van-cell-group>
                 </picker>
                             

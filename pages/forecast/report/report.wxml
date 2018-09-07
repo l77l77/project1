@@ -7,10 +7,10 @@
 
   <view>
     <van-panel title="情况">
-      <view class="content">xx项较正常值偏低；xx值较正常值偏高</view>
+      <view class="content"><text>{{situation}}</text></view>
     </van-panel>
     <van-panel title="原因">
-      <view class="content">根据异常项获取原因</view>
+      <view class="content">{{reason}}</view>
     </van-panel>
     <!-- <van-panel title="建议">
       <view class="content">如果您想看真话，请点击下面的按钮进行付费观看（要素察觉）</view>

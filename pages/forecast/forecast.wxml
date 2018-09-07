@@ -11,13 +11,13 @@
     <view class='cell-title' style='padding: 0px 15px 15px;'>样例数值</view>
     <van-cell-group>
       <van-cell  wx:for="{{egList}}" 
-      title="{{item.title}}" value="{{item.value}}" label="参考值:{{item.label}}" 
+      title="{{item.title}}" value="{{item.value}}" label="{{item.label}}" 
       border="{{item.border}}"/>
     </van-cell-group>
 
     <view class='cell-title'>分析结果</view>
     <van-panel>
-      <view class='content'>噢啦噢啦噢啦噢啦噢啦噢啦噢啦！木大木大木大木大木大木大木大木大木大！</view>
+      <view class='content'>{{egForecast}}</view>
     </van-panel>
 
   </view>

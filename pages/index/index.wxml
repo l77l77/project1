@@ -24,11 +24,11 @@
   <view class='blockColumn'>
     <view class='blockItem' bindtap='goToKnowledge' style='background: #66ccff'>
       <view class='blockRowtext'>医学常识</view>
-      <view class='blockRowtext2'>濒死无畏的挣扎^_^~~~~</view>
+      <view class='blockRowtext2'>了解不得不知道的医学小知识</view>
     </view>
     <view class='blockItem' bindtap='goToMustKnow' style='background: rgb(78, 230, 86)'>
       <view class='blockRowtext'>检验须知</view>
-      <view class='blockRowtext2'>反正在这里你会亲眼看到自己会怎样接受审判</view>
+      <view class='blockRowtext2'>常见问题与注意事项</view>
     </view>
     <view class='blockItem' bindtap='goToGuide' style='background:#FF9999'>
       <view class='blockRowtext'>使用指南</view>

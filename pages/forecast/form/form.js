@@ -22,112 +22,113 @@ Page({
       },
 
       {
-        name: '红细胞类',
-        id: '1',
-        open: false,
-        items:
-        [
-          {
-            name: '红细胞计数(10^9/L)',
-            id:'10',
-            value: null,
-          },
-          {
-            name: '血红蛋白(g/L)',
-            id:'11',
-            value: null,
-          },
-          {
-            name:'红细胞比积(%)',
-            id:'12',
-            value: null,
-          },
-          {
-            name:'红细胞平均容量(FL)',
-            id:'13',
-            value:null,
-          },
-          {
-            name:'平均血红蛋白(pg)',
-            id:'14',
-            value:null,
-          },
-          {
-            name: '平均血红蛋白浓度(g/L)',
-            id: '15',
-            value: null,
-          },
-          {
-            name:'红细胞体积分布(%)',
-            id:'16',
-            value: null,
-          },
-        ],
-      },
-
-      {
         name:'白细胞类',
-        id:'2',
+        id:'1',
         open:false,
         items:
         [
           {
             name:'白细胞计数(10^9/L)',
-            id:'20',
+            id:'10',
             value:null,
           },
           {
             name:'中性粒细胞比率(%)',
-            id:'21',
+            id:'11',
             value:null,
           },
           {
             name:'淋巴细胞比率(%)',
-            id:'22',
+            id:'12',
             value:null,
           },
           {
             name:'单核细胞比率(%)',
-            id:'23',
+            id:'13',
             value:null,
           },
           {
             name:'嗜酸粒细胞比率(%)',
-            id:'24',
+            id:'14',
             value:null,
           },
           {
             name:'嗜碱粒细胞比率(%)',
-            id:'25',
+            id:'15',
             value:null,
           },
           {
             name:'中性粒细胞计数(10^9/L)',
-            id:'26',
+            id:'16',
             value:null,
           },
           {
             name:'淋巴细胞计数(10^9/L)',
-            id: '27',
+            id: '17',
             value: null,
           },
           {
             name:'单核细胞计数(10^9/L)',
-            id:'28',
+            id:'18',
             value:null,
           },
           {
             name:'嗜酸粒细胞计数(10^9/L)',
-            id:'29',
+            id:'19',
             value:null,
           },
           {
             name:'嗜碱粒细胞计数(10^9/L)',
-            id:'210',
+            id:'110',
             value:null,
           },
         ]
       },
+
+      {
+        name: '红细胞类',
+        id: '2',
+        open: false,
+        items:
+        [
+          {
+            name: '红细胞计数(10^9/L)',
+            id:'20',
+            value: null,
+          },
+          {
+            name: '血红蛋白(g/L)',
+            id:'21',
+            value: null,
+          },
+          {
+            name:'红细胞比积(%)',
+            id:'22',
+            value: null,
+          },
+          {
+            name:'红细胞平均容量(FL)',
+            id:'23',
+            value:null,
+          },
+          {
+            name:'平均血红蛋白(pg)',
+            id:'24',
+            value:null,
+          },
+          {
+            name: '平均血红蛋白浓度(g/L)',
+            id: '25',
+            value: null,
+          },
+          {
+            name:'红细胞体积分布(%)',
+            id:'26',
+            value: null,
+          },
+        ],
+      },
+
 
       {
         name:'血小板类',
@@ -201,8 +202,44 @@ Page({
 
   goToReport:function() //跳转下个页面
   {
+    // this.setDataStorage()
     wx.navigateTo({
       url: '../report/report',
+    })
+  },
+
+  setDataStorage:function(){  //向索引数组中添加本次输入数据的索引并保存data.list
+    var date = new Date()
+    //存储索引表
+    wx.getStorage({ 
+      key: 'indexList',
+      success: function (res) {
+        console.log(res)
+        var exlist = res.data
+        exlist.push(date)
+        wx.setStorage({
+          key: 'indexList',
+          data: exlist,
+        })
+      },
+      fail: function () {
+        var indexList = [date]
+        wx.setStorage({
+          key: 'indexList',
+          data: indexList,
+        })
+      }
+    })
+    //每个报告的实例的key都是对应的date.toDateString()
+    var tkey = date.toDateString()
+    var whList = {
+      itemList: this.data.list,
+      report:null,
+      forecast:null
+      }
+    wx.setStorage({
+      key: tkey,
+      data: whList,
     })
   },
 
