@@ -197,26 +197,38 @@ Page({
       }
 
     ],
+    tkey:null
   
   },
 
   goToReport:function() //跳转下个页面
   {
-    // this.setDataStorage()
+    this.setDataStorage()
     wx.navigateTo({
-      url: '../report/report',
+      url: '../report/report?tKey='+this.data.tKey.getTime(),
     })
   },
 
   setDataStorage:function(){  //向索引数组中添加本次输入数据的索引并保存data.list
     var date = new Date()
+    this.setData({tKey:date})
+    var whList = {
+      itemList: this.data.list,
+      report: null,
+      forecast: null
+    }
     //存储索引表
     wx.getStorage({ 
       key: 'indexList',
       success: function (res) {
         console.log(res)
         var exlist = res.data
-        exlist.push(date)
+        var indexitem={
+          index:date,
+          key:date.getTime(),
+          data:whList
+        }
+        exlist.push(indexitem)
         wx.setStorage({
           key: 'indexList',
           data: exlist,
@@ -224,6 +236,13 @@ Page({
       },
       fail: function () {
         var indexList = [date]
+        var indexList=[
+          {
+            index:date,
+            key:date.getTime(),
+            data:whList
+          }
+        ]
         wx.setStorage({
           key: 'indexList',
           data: indexList,
@@ -231,16 +250,16 @@ Page({
       }
     })
     //每个报告的实例的key都是对应的date.toDateString()
-    var tkey = date.toDateString()
-    var whList = {
-      itemList: this.data.list,
-      report:null,
-      forecast:null
-      }
-    wx.setStorage({
-      key: tkey,
-      data: whList,
-    })
+    // var tkey = date.toDateString()
+    // var whList = {
+    //   itemList: this.data.list,
+    //   report:null,
+    //   forecast:null
+    //   }
+    // wx.setStorage({
+    //   key: tkey,
+    //   data: whList,
+    // })
   },
 
   fieldInput:function(e){ //处理输入数据并重置在data中

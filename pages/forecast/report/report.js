@@ -3,8 +3,10 @@ Page({
 
   
   data: {
-    situation:'您检验项中的',
-    reason:'根据异常项获取原因',
+    report:{
+      situation: '您检验项中的',
+      reason: '根据异常项获取原因',
+    },
     testA: [1                   //1-正常  2-偏高  3-偏低
       , 1, 1, 2, 2, 3, 1, 3
       , 3, 2, 1, 2, 3, 3, 3
@@ -18,7 +20,9 @@ Page({
       '红细胞平均容量', '平均血红蛋白', '平均血红蛋白浓度','红细胞体积分布',
       '血小板计数', '血小板比率', '血小板平均体积','血小板分布宽度',
       '网织红细胞百分比', '网织红细胞绝对值', '未成熟网织红细胞指数','高光散网织红百分比'
-    ]
+    ],
+    tKey:null
+    
   },
 
   goToPay:function()
@@ -28,12 +32,11 @@ Page({
     })
   },
 
-  makeSituation:function(a)
+  makeSituation:function(a)   //根据后端返回的123数组生成报告情况（各检验项偏高/偏低）
   {
     var up=[]
     var down=[]
-    var newsituation = this.data.situation
-    console.log(newsituation)
+    var newsituation = this.data.report.situation
     for(var i=1;i<a.length;i++)
     {
       if(a[i]==2)
@@ -56,7 +59,33 @@ Page({
         newsituation = newsituation + down[i] + ","
     }
     newsituation = newsituation + "相较正常值偏低。"
-    this.setData({situation: newsituation})
+    var newreport=this.data.report
+    newreport.situation=newsituation
+    this.setData({report: newreport})
+  },
+
+  setDataStorage: function (){
+    var thisp=this
+    wx.getStorage({
+      key: 'indexList',
+      success: function(res) {
+        var index=res.data
+        console.log(index)
+        for(var i=0;i<index.length;i++)
+        {
+          if(index[i].key==thisp.data.tKey)
+            index[i].data.report=thisp.data.report
+        }
+        wx.setStorage({
+          key: 'indexList',
+          data: index,
+        })
+      },
+      fail:function(res){
+        console.log(res)
+      }
+    })
+
   },
 
   /**
@@ -64,6 +93,8 @@ Page({
    */
   onLoad: function (options) {
     this.makeSituation(this.data.testA)
+    this.setData({tKey:options.tKey})
+    this.setDataStorage()
   },
 
   /**

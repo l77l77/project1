@@ -7,10 +7,10 @@
 
   <view>
     <van-panel title="情况">
-      <view class="content"><text>{{situation}}</text></view>
+      <view class="content"><text>{{report.situation}}</text></view>
     </van-panel>
     <van-panel title="原因">
-      <view class="content">{{reason}}</view>
+      <view class="content">{{report.reason}}</view>
     </van-panel>
     <!-- <van-panel title="建议">
       <view class="content">如果您想看真话，请点击下面的按钮进行付费观看（要素察觉）</view>
