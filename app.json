@@ -34,8 +34,8 @@
         "selectedIconPath": "image/icons/tabBar_health_s.png"
       },
       {
-        "text": "我的历史",
-        "pagePath": "pages/me/history/history",
+        "text": "我的",
+        "pagePath": "pages/me/me",
         "iconPath": "image/icons/tabBar_me.png",
         "selectedIconPath": "image/icons/tabBar_me_s.png"
       }

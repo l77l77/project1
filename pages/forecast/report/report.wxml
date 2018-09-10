@@ -6,23 +6,24 @@
   </view>
 
   <view>
-    <van-panel title="情况">
+    <van-cell title="审核情况" icon="passed" value="检查单数值正确予以通过" wx:if="{{flag}}" />
+    <van-cell title="审核情况" icon="close" value="检查单数值有误不予通过" wx:else="{{flag}}" />
+
+    <van-panel title="情况" border="true">
       <view class="content"><text>{{report.situation}}</text></view>
     </van-panel>
-    <van-panel title="原因">
+    <van-panel title="原因" border="true">
       <view class="content">{{report.reason}}</view>
     </van-panel>
-    <!-- <van-panel title="建议">
-      <view class="content">如果您想看真话，请点击下面的按钮进行付费观看（要素察觉）</view>
-    </van-panel> -->
+    <van-panel title="预测" border="false">
+      <view class="content">{{report.forecast}}</view>
+    </van-panel>
   </view>
 
   <view class='fullbtnview'>
-
       <van-button type='primary' size="large" 
-      style='width:95%;margin-bottom: 15px;' bindtap='goToPay'>查看我的预测</van-button>
-
-    </view>
+      style='width:95%;margin-bottom: 15px;' bindtap='goHome'>返回主页</van-button>
+  </view>
 
 </view>
 

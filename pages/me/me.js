@@ -1,5 +1,4 @@
 // pages/me/me.js
-const app = getApp();
 
 Page({
 
@@ -7,14 +6,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:null,
-    headUrl:"https://s1.ax1x.com/2018/08/17/PW85y4.jpg"
+    id:'奔跑的刺猬',
+    headUrl:"https://s1.ax1x.com/2018/08/17/PW85y4.jpg",
+    list:[],
+    showFlag:true,
   
   },
 
-  goToHistory:function(){
+  goToHistory:function(e){
     wx.navigateTo({
-      url: './history/history',
+      url: './history/history?id=' + e.target.id,
+    })
+  },
+
+  getindexList:function(){
+    var indexList
+    var thisp=this
+    wx.getStorage({
+      key: 'indexList',
+      success: function(res) {
+        indexList=res.data
+        for (var i = 0; i < indexList.length; i++) {
+          var date = indexList[i].key
+          date=new Date(date)
+          var str = date.getFullYear()
+          str = str + "-" + (date.getMonth()+1)
+          str = str + "-" + date.getDate()
+          str = str + "  " + date.getHours()
+          str = str + ":" + date.getMinutes()
+          var list = thisp.data.list
+          var item={
+            key:str,
+            id:date.getTime()
+          }
+          list.push(item)
+          thisp.setData({ list: list })
+        }
+      },
     })
   },
 
@@ -35,7 +63,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    if(this.data.showFlag)
+    {
+      this.getindexList()
+      this.setData({showFlag:false})
+    }
   },
 
   /**

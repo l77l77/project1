@@ -3,17 +3,18 @@ Page({
   data: {
     goods:[
       {
-        name:"皮皮虾",
-        price:"25.3"
+        name:"检测订单",
+        price:'5.0'
       }
     ],
-    sum:0
+    sum:0.0,
+    tKey:null,
   
   },
 
   tabpay:function(){
     wx.redirectTo({
-      url: '../forecastResult/forecastResult',
+      url: '../report/report?tKey='+this.data.tKey,
     })
   },
 
@@ -21,7 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({tKey:options.tKey})
   },
 
   /**
@@ -36,7 +37,7 @@ Page({
    */
   onShow: function () {
     
-    var t=0
+    var t=0.0
     for (var i = 0; i < this.data.goods.length; i++) {
       t = this.data.goods[i].price + t
     }

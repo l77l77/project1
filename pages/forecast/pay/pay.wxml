@@ -9,7 +9,7 @@
   <view>
     <van-cell-group id="goodsList">
       <van-cell wx:for="{{goods}}" title="{{item.name}}" label="无优惠" 
-      icon="exchange" value="{{item.price}}" />
+      icon="exchange" value="￥{{item.price}}" />
       <van-cell title="优惠券" icon="discount" value="别瞎点了反正没有的" is-link />
     </van-cell-group>
   </view>

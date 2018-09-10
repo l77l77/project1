@@ -5,8 +5,10 @@ Page({
   data: {
     report:{
       situation: '您检验项中的',
-      reason: '根据异常项获取原因',
+      reason: '可能是大量出汗、连续呕吐、反复腹泻、大面积烧伤或者糖尿病酮症酸中毒及尿崩症造成，另外还有可能是因为某些肿瘤及真性红细胞增多症',
+      forecast:'你可能得了溶血性贫血'
     },
+    flag:true,
     testA: [1                   //1-正常  2-偏高  3-偏低
       , 1, 1, 2, 2, 3, 1, 3
       , 3, 2, 1, 2, 3, 3, 3
@@ -25,10 +27,10 @@ Page({
     
   },
 
-  goToPay:function()
+  goHome:function()
   {
-    wx.navigateTo({
-      url: '../pay/pay',
+    wx.switchTab({
+      url: '../forecast',
     })
   },
 
@@ -64,13 +66,12 @@ Page({
     this.setData({report: newreport})
   },
 
-  setDataStorage: function (){
+  setDataStorage: function (){  //向当前指定的缓存中存入情况，原因和预测
     var thisp=this
     wx.getStorage({
       key: 'indexList',
       success: function(res) {
         var index=res.data
-        console.log(index)
         for(var i=0;i<index.length;i++)
         {
           if(index[i].key==thisp.data.tKey)

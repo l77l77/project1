@@ -2,11 +2,37 @@
 <view>
   <view class="page__hd">
     <view class="page__title">历史报告</view>
-    <view class="page__desc">点击以查看详情</view>
+    <view class="page__desc"></view>
   </view>
 
-  <van-cell-group>
-      <van-cell wx:for="{{list}}" title="{{item.date}}" is-link />
-  </van-cell-group>
+  <view class='fullview' style='padding:0px'>
+
+    <view class='cell-title' style='padding: 0px 15px 15px;'>检查单详情</view>
+    <van-cell-group>
+      <van-cell  wx:for="{{list}}" 
+      title="{{item.name}}" value="{{item.value}}"  />
+    </van-cell-group>
+
+    <view class='cell-title'>情况</view>
+    <van-panel>
+      <view class='content'>{{data.data.report.situation}}</view>
+    </van-panel>
+
+    <view class='cell-title'>原因</view>
+    <van-panel>
+      <view class='content'>{{data.data.report.reason}}</view>
+    </van-panel>
+
+    <view class='cell-title'>预测</view>
+    <van-panel>
+      <view class='content'>{{data.data.report.forecast}}</view>
+    </van-panel>
+
+  </view>
+
+  <view class='fullbtnview'>
+      <van-button type='primary' size="large" 
+      style='width:95%;margin-bottom: 15px;' bindtap='goHome'>返回主页</van-button>
+  </view>
 
 </view>

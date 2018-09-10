@@ -8,17 +8,17 @@ Page({
       {
         id:1,
         url: 'https://i.loli.net/2018/09/04/5b8ea02cf23d2.png',
-        title:"拿什么读懂你，我的“乙肝两对半”"
+        title:"细数甲状腺自身抗体的三大罪行！"
       },
       {
         id:2,
         url: 'https://i.loli.net/2018/09/04/5b8ea02cc22b6.jpg',
-        title: "D姓双胞胎与凝血家族的那些陈年往事"
+        title: "这种癌让“小丸子”失去了妈妈"
       },
       {
         id:3,
         url: 'https://i.loli.net/2018/09/04/5b8ea02cf1d45.jpg',
-        title: "一文读懂肝纤四项的临床意义！"
+        title: "产后大出血，RBC、Hb竟然不降反升？"
       },
     ]
   },

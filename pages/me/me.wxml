@@ -1,6 +1,5 @@
-﻿<!--pages/me/me.wxml-->
+<!--pages/me/me.wxml-->
 <view class='page'>
-
   <view class='infoRow'>
     <view class='head'>
       <image class='headImg' src='{{headUrl}}' mode='aspectFill'></image>
@@ -13,9 +12,9 @@
 
 
   <view class='listView'>
+    <view class='title'>历史记录</view>
     <van-cell-group>
-      <van-cell title="查看历史报告" bindtap="goToHistory" is-link />
-      <van-cell title="查看历史订单" bindtap="goToHistory" is-link />
+      <van-cell wx:for="{{list}}" title="{{item.key}}" id="{{item.id}}" bindtap="goToHistory" is-link />
     </van-cell-group>
   </view>
 

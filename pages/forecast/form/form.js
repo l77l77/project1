@@ -205,7 +205,7 @@ Page({
   {
     this.setDataStorage()
     wx.navigateTo({
-      url: '../report/report?tKey='+this.data.tKey.getTime(),
+      url: '../pay/pay?tKey='+this.data.tKey.getTime(),
     })
   },
 
@@ -215,13 +215,11 @@ Page({
     var whList = {
       itemList: this.data.list,
       report: null,
-      forecast: null
     }
     //存储索引表
     wx.getStorage({ 
       key: 'indexList',
       success: function (res) {
-        console.log(res)
         var exlist = res.data
         var indexitem={
           index:date,

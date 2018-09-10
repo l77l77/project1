@@ -5,19 +5,61 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list:[
-      {
-        date:"2016-11-29 13:40"
-      }
-    ]
+    data:null,
+    list:[]
   
   },
+
+
+  getData:function(options){
+    var thisp = this
+    wx.getStorage({
+      key: 'indexList',
+      success: function (res) {
+        var whList = res.data
+        for (var i = 0; i < whList.length; i++) {
+          if (whList[i].key == options.id)
+            thisp.setData({ data: whList[i] })
+        }
+        thisp.makelist(thisp)
+      },
+      fail: function (res) {
+        console.log(res)
+      }
+    })
+  },
+
+  makelist:function(thisp){
+    var dataf=thisp.data.data
+    var data=dataf.data.itemList
+    var listt=[]
+    for(var i=0;i<data.length;i++)
+    {
+      var l=data[i].items.length
+      for (var j = 0; j<l;j++)
+      {
+        var item={
+          name:data[i].items[j].name,
+          value: data[i].items[j].value,
+        }
+        listt.push(item)
+        thisp.setData({list:listt})
+      }
+    }
+  },
+
+  goHome: function () {
+    wx.switchTab({
+      url: '../me',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getData(options)
   },
 
   /**
