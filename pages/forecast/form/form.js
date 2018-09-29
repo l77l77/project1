@@ -197,15 +197,46 @@ Page({
       }
 
     ],
-    tkey:null
-  
+    tkey:null,
+    jsontext:null,
   },
 
   goToReport:function() //跳转下个页面
   {
+    console.log(this.convertJson())
     this.setDataStorage()
     wx.navigateTo({
       url: '../pay/pay?tKey='+this.data.tKey.getTime(),
+    })
+  },
+
+  convertJson:function(){ //转换json数组
+    var list=[]
+    var m=0
+    for(var i=0;i<this.data.list.length-1;i++)
+    {
+      var z=this.data.list[i].items
+      for(var t in z)
+      {
+        list[m]=z[t].value    
+        m++
+      }
+    }
+    //处理性别的问题（就他和其他存储的结构不一样)
+    list[m]=this.data.list[i].value
+    
+    var temp=list[m]
+    list[m]=list[0]
+    list[0]=temp
+    var json=JSON.stringify({list:list})
+    return json
+
+  },
+
+  doRequest:function(json){
+    wx.request({
+      url: 'http://api.quan9.club:8000/vtcheck',
+      header:''
     })
   },
 
@@ -261,7 +292,6 @@ Page({
   },
 
   fieldInput:function(e){ //处理输入数据并重置在data中
-    console.log(e)
     var fatherId=e.target.id[0]
     if(e.target.id.length>2)
       var itemId = e.target.id[1] + e.target.id[2]
