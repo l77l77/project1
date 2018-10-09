@@ -203,7 +203,10 @@ Page({
 
   goToReport:function() //跳转下个页面
   {
-    console.log(this.convertJson())
+    var tempJson=this.convertJson()
+    this.setData({jsontext:tempJson})
+    console.log(this.data.jsontext)
+    this.doRequest(this.data.jsontext)
     this.setDataStorage()
     wx.navigateTo({
       url: '../pay/pay?tKey='+this.data.tKey.getTime(),
@@ -212,31 +215,41 @@ Page({
 
   convertJson:function(){ //转换json数组
     var list=[]
-    var m=0
+    var m=1
     for(var i=0;i<this.data.list.length-1;i++)
     {
       var z=this.data.list[i].items
       for(var t in z)
       {
-        list[m]=z[t].value    
+        list[m] =parseFloat(z[t].value)    
         m++
       }
     }
     //处理性别的问题（就他和其他存储的结构不一样)
-    list[m]=this.data.list[i].value
+    list[0]=parseInt(this.data.list[i].value)
     
-    var temp=list[m]
-    list[m]=list[0]
-    list[0]=temp
-    var json=JSON.stringify({list:list})
-    return json
+    // var temp=list[m]
+    // list[m]=list[0]
+    // list[0]=temp
+    return list
 
   },
 
   doRequest:function(json){
+    console.log(json)
     wx.request({
       url: 'http://api.quan9.club:8000/vtcheck',
-      header:''
+      header:{
+        'content-type': 'application/json'
+      },
+      method:'POST',
+      data:{
+        list:json
+        },
+      success(res){
+        console.log(res)
+        //res.data——病症的名字
+      }
     })
   },
 
