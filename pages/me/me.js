@@ -1,4 +1,5 @@
 // pages/me/me.js
+const app=getApp()
 
 Page({
 
@@ -8,9 +9,7 @@ Page({
   data: {
     id:'奔跑的刺猬',
     headUrl:"https://s1.ax1x.com/2018/08/17/PW85y4.jpg",
-    list:[],
-    showFlag:true,
-  
+    list:[],  
   },
 
   goToHistory:function(e){
@@ -50,6 +49,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+  
   },
 
   /**
@@ -63,10 +63,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if(this.data.showFlag)
+    if (app.globalData.meFlashFlag)
     {
+      this.setData({ list: [] })
+      console.log("before",this.data.list)
       this.getindexList()
-      this.setData({showFlag:false})
+      console.log("after",this.data.list)
     }
   },
 
@@ -74,14 +76,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    app.globalData.meFlashFlag = false  
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**

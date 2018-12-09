@@ -11,12 +11,12 @@ Page({
           {
             name:'有核红细胞绝对值(10^9/L)',
             id:'00',
-            value:null,
+            value:0.02,
           },
           {
             name:'有核红细胞百分比(%)',
             id:'01',
-            value:null,
+            value:0.1,
           }
         ],
       },
@@ -30,57 +30,57 @@ Page({
           {
             name:'白细胞计数(10^9/L)',
             id:'10',
-            value:null,
+            value:14.27,
           },
           {
             name:'中性粒细胞比率(%)',
             id:'11',
-            value:null,
+            value:76.7,
           },
           {
             name:'淋巴细胞比率(%)',
             id:'12',
-            value:null,
+            value:16.9,
           },
           {
             name:'单核细胞比率(%)',
             id:'13',
-            value:null,
+            value:5.8,
           },
           {
             name:'嗜酸粒细胞比率(%)',
             id:'14',
-            value:null,
+            value:0.3,
           },
           {
             name:'嗜碱粒细胞比率(%)',
             id:'15',
-            value:null,
+            value:0.3,
           },
           {
             name:'中性粒细胞计数(10^9/L)',
             id:'16',
-            value:null,
+            value:10.95,
           },
           {
             name:'淋巴细胞计数(10^9/L)',
             id: '17',
-            value: null,
+            value: 2.41,
           },
           {
             name:'单核细胞计数(10^9/L)',
             id:'18',
-            value:null,
+            value:0.83,
           },
           {
             name:'嗜酸粒细胞计数(10^9/L)',
             id:'19',
-            value:null,
+            value:0.04,
           },
           {
             name:'嗜碱粒细胞计数(10^9/L)',
             id:'110',
-            value:null,
+            value:0.04,
           },
         ]
       },
@@ -94,37 +94,37 @@ Page({
           {
             name: '红细胞计数(10^9/L)',
             id:'20',
-            value: null,
+            value: 1.94,
           },
           {
             name: '血红蛋白(g/L)',
             id:'21',
-            value: null,
+            value: 61,
           },
           {
             name:'红细胞比积(%)',
             id:'22',
-            value: null,
+            value: 0.181,
           },
           {
             name:'红细胞平均容量(FL)',
             id:'23',
-            value:null,
+            value:93.3,
           },
           {
             name:'平均血红蛋白(pg)',
             id:'24',
-            value:null,
+            value:31.4,
           },
           {
             name: '平均血红蛋白浓度(g/L)',
             id: '25',
-            value: null,
+            value: 337,
           },
           {
             name:'红细胞体积分布(%)',
             id:'26',
-            value: null,
+            value: 15.9,
           },
         ],
       },
@@ -139,22 +139,22 @@ Page({
           {
             name:'血小板计数(10^9/L)',
             id:'30',
-            value:null,
+            value:201,
           },
           {
             name:'血小板比率(%)',
             id:'31',
-            value:null,
+            value:0.23,
           },
           {
             name:'血小板平均体积(FL)',
             id:'32',
-            value:null,
+            value:11.3,
           },
           {
             name:'血小板平均分布宽度(%)',
             id:'33',
-            value:null,
+            value:13.2,
           },
         ]
       },
@@ -168,22 +168,22 @@ Page({
           {
             name:'网织红细胞百分比(%)',
             id:'40',
-            value:null,
+            value:5.02,
           },
           {
             name:'网织红细胞绝对值(10^9/L)',
             id:'41',
-            value:null,
+            value:0.0974,
           },
           {
             name:'未成熟网织红细胞指数',
             id:'42',
-            value:null,
+            value:29,
           },
           {
             name:'高光散网织红百分比(%)',
             id:'43',
-            value:null,
+            value:12.2,
           }
         ]
       },
@@ -199,15 +199,16 @@ Page({
     ],
     tkey:null,
     jsontext:null,
+    forecast:"",
   },
 
   goToReport:function() //跳转下个页面
   {
     var tempJson=this.convertJson()
+    var date = new Date()
+    this.setData({ tKey: date })
     this.setData({jsontext:tempJson})
-    console.log(this.data.jsontext)
     this.doRequest(this.data.jsontext)
-    this.setDataStorage()
     wx.navigateTo({
       url: '../pay/pay?tKey='+this.data.tKey.getTime(),
     })
@@ -236,7 +237,7 @@ Page({
   },
 
   doRequest:function(json){
-    console.log(json)
+    var thisp=this
     wx.request({
       url: 'http://api.quan9.club:8000/vtcheck',
       header:{
@@ -247,19 +248,24 @@ Page({
         list:json
         },
       success(res){
-        console.log(res)
+        console.log("JSON", json)
+        var text="您可能有患有"+res.data
+        thisp.setData({forecast:text})
+        console.log(thisp.data)
+        thisp.setDataStorage()
         //res.data——病症的名字
       }
     })
   },
 
   setDataStorage:function(){  //向索引数组中添加本次输入数据的索引并保存data.list
-    var date = new Date()
-    this.setData({tKey:date})
     var whList = {
       itemList: this.data.list,
       report: null,
+      forecast:this.data.forecast
     }
+    var date=this.data.tKey
+    console.log(whList)
     //存储索引表
     wx.getStorage({ 
       key: 'indexList',
@@ -339,7 +345,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({list:this.data.list})
   },
 
   /**

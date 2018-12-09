@@ -20,7 +20,7 @@
                   <van-field
                     wx:for="{{item.items}}"
                     bind:input="fieldInput"
-                    value="{{ username }}"
+                    value="{{ item.value }}"
                     id="{{item.id}}"
                     clearable
                     label="{{item.name}}"
