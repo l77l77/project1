@@ -8,7 +8,6 @@
     "pages/forecast/report/report",
     "pages/forecast/pay/pay",
     "pages/me/me",
-    "pages/forecast/forecastResult/forecastResult",
     "pages/me/history/history",
     "pages/index/imgArticle/imgArticle"
   ],

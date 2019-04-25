@@ -239,7 +239,7 @@ Page({
   doRequest:function(json){
     var thisp=this
     wx.request({
-      url: 'http://api.quan9.club:8000/vtcheck',
+      url: 'http://api.quan9.tk:8000/vtcheck',
       header:{
         'content-type': 'application/json'
       },
@@ -250,6 +250,7 @@ Page({
       success(res){
         console.log("JSON", json)
         var text="您可能有患有"+res.data
+        console.log("预测疾病",res.data)
         thisp.setData({forecast:text})
         console.log(thisp.data)
         thisp.setDataStorage()

@@ -63,7 +63,7 @@ Page({
         JSONtext=thisp.convertJson(NowItem)
         console.log("cmp JSON", JSONtext)
         wx.request({
-          url: 'http://api.quan9.club:8000/cmp',
+          url: 'http://api.quan9.tk:8000/cmp',
           header: {
             'content-type': 'application/json'
           },
@@ -79,7 +79,7 @@ Page({
           }
         })
         wx.request({
-          url: 'http://api.quan9.club:8000/examine',
+          url: 'http://api.quan9.tk:8000/examine',
           header: {
             'content-type': 'application/json'
           },
