@@ -7,7 +7,7 @@ Page({
     swiperImg:[
       {
         id:1,
-        url: 'https://i.loli.net/2018/09/04/5b8ea02cf23d2.png',
+        url: 'https://i.loli.net/2019/05/04/5ccd049802d98.png',
         title:"细数甲状腺自身抗体的三大罪行！"
       },
       {
