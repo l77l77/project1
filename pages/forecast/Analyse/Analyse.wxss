@@ -1,0 +1,57 @@
+/* pages/forecast/Analyse/Analyse.wxss */
+.fullbtnview{
+  width: 100%;
+  line-height: 15px;
+  padding: 20px 0px 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.content {
+  padding: 20px;
+  font-size: 14px;
+  color: #8f8f8f
+}
+/*图片*/
+.section__ctn{
+    text-align: center;
+}
+/* 横着的分割View样式 
+分割线样式
+.divLine{
+ background: #E0E3DA;
+ width: 100%;
+ height: 5px;
+}*/
+/*表格样式*/
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: rgb(230, 248, 249);
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: rgba(14, 247, 138, 0.897);
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}

@@ -8,8 +8,9 @@
       {{id}}
     </view>
   </view>
+  
 
-
+<canvas canvas-id='curve-img' style='width:{{canvasWidth}}px;height:{{canvasHeight}}px;'></canvas>
 
   <view class='listView'>
     <view class='title'>历史记录</view>

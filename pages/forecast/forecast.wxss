@@ -27,7 +27,14 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
+.page__title{
+  margin-top:10px;
+  font-size:25px;
+  margin-left: 10px;
+}
+.page_there{
+  margin-top:10px;
+}
 .cell-title {
   margin: 0;
   font-weight: 400;

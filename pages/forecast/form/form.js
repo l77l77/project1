@@ -1,6 +1,7 @@
 // pages/forecast/form/form.js
 Page({
   data: {
+    activeNames: ['1'],
     list: [
       {
         name: '有核红细胞类',
@@ -341,7 +342,11 @@ Page({
     newlist[5].value=e.detail.value
     this.setData({list:newlist})
   },
-
+  onChange(event) {
+    this.setData({
+      activeNames: event.detail
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

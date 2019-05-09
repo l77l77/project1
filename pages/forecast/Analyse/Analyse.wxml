@@ -1,0 +1,58 @@
+<!--pages/forecast/Analyse/Analyse.wxml-->
+<view class="page__hd">
+        <view class="page__title">报告分析</view>
+        <view class="page__desc">report analyse</view>
+</view>
+<!-->
+总结部分
+<-->
+<van-panel title="总结部分" border="true">
+<view class='content'><text>{{}}</text></view>
+</van-panel>
+
+<!-->模型解释部分<-->
+<van-panel title="模型解释" border="true">
+</van-panel>
+<view class='model'>
+  <view class='image'>
+    <view class="section section_gap" wx:for-items="{{array}}" wx:for-item="item">
+      <view class="section__title">{{item.text}}</view>
+      <view class="section__ctn">
+        <image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{src}}"></image>
+      </view>
+     </view>
+  </view>
+</view>
+
+<view class="table" style='width:95%;margin-bottom: 15px'>
+  <view class="tr bg-w">
+    <view class="th">序号</view>
+    <view class='th'>检验项</view>
+    <view class="th">正常值</view>
+    <view class="th ">用户值</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.code}}</view>
+      <view class='td'>{{item.item}}</view>
+      <view class="td">{{item.nomal}}</view>
+      <view class="td">{{item.fact}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.code}}</view>
+      <view class='td'>{{item.item}}</view>
+      <view class="td">{{item.nomal}}</view>
+      <view class="td">{{item.fact}}</view>
+    </view>
+  </block>
+</view>
+<view class='maybe'> 
+你可能出现以下状况：</view>
+<view class='plan'>
+制定计划</view>
+<view class='fullbtnview'>
+
+      <van-button type='primary' size="large" 
+      style='width:95%;margin-bottom: 15px;' bindtap='goToHome' plain>返回主页</van-button>
+
+</view>
