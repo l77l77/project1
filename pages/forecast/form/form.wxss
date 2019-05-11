@@ -6,14 +6,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.custom-class{
-  width:70%;
-}
-.page_here{
-  width:92%;
-  margin-left: 15px;
 
-}
 .fullbtnview{
   width: 100%;
   line-height: 15px;

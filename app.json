@@ -9,7 +9,8 @@
     "pages/forecast/pay/pay",
     "pages/me/me",
     "pages/me/history/history",
-    "pages/index/imgArticle/imgArticle"
+    "pages/index/imgArticle/imgArticle",
+    "pages/forecast/Analyse/Analyse"
   ],
   "window": {
     "backgroundTextStyle": "light",

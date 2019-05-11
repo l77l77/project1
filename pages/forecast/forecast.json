@@ -1,8 +1,6 @@
 {
   "navigationBarTitleText": "健康测试样例",
   "usingComponents": {
-    "van-row": "../../dist/row/index",
-    "van-col": "../../dist/col/index",
     "van-cell": "../../dist/cell/index",
     "van-cell-group": "../../dist/cell-group/index",
     "van-panel": "../../dist/panel/index",

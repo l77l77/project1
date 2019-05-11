@@ -28,12 +28,11 @@ Page({
     indexData:null
     
   },
-
-  goHome:function()
+  gopay:function()
   {
     app.globalData.meFlashFlag = true
-    wx.switchTab({
-      url: '../forecast',
+    wx.navigateTo({
+      url: '/pages/forecast/pay/pay',
     })
   },
 

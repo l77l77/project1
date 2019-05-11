@@ -1,18 +1,10 @@
 <!--pages/forecast/forecast.wxml-->
-<van-row>
-  <van-col span="14"> 
-        <view class="page__title">样例示范</view>
-  </van-col>
-  <van-col span="7" offset="3">
-    <view  class="page_there"><van-button type='primary'  bindtap='goToForm'>
-    直接检测</van-button>
-    </view>
-    </van-col>
-</van-row>
-
 <view class='mainPage'>
 
-
+  <view class="page__hd">
+        <view class="page__title">样例示范</view>
+        <view class="page__desc">健康测试</view>
+  </view>
 
   <view class='fullview' style='padding:0px'>
 

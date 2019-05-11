@@ -14,7 +14,7 @@ Page({
 
   tabpay:function(){
     wx.redirectTo({
-      url: '../report/report?tKey='+this.data.tKey,
+      url: '../Analyse/Analyse?tKey='+this.data.tKey,
     })
   },
 

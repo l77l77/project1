@@ -22,15 +22,15 @@
   </view>
 
   <view class='blockColumn'>
-    <view class='blockItem' bindtap='goToKnowledge' style='background:#38B0DE'>
+    <view class='blockItem' bindtap='goToKnowledge' style='background: #66ccff'>
       <view class='blockRowtext'>医学常识</view>
       <view class='blockRowtext2'>了解不得不知道的医学小知识</view>
     </view>
-    <view class='blockItem' bindtap='goToMustKnow' style='background:#3299CC'>
+    <view class='blockItem' bindtap='goToMustKnow' style='background: rgb(78, 230, 86)'>
       <view class='blockRowtext'>检验须知</view>
       <view class='blockRowtext2'>常见问题与注意事项</view>
     </view>
-    <view class='blockItem' bindtap='goToGuide' style='background:#09BB07'>
+    <view class='blockItem' bindtap='goToGuide' style='background:#FF9999'>
       <view class='blockRowtext'>使用指南</view>
       <view class='blockRowtext2'>点击查看本程序的使用方法</view>
     </view>

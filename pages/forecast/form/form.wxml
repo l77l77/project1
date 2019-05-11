@@ -4,21 +4,7 @@
         <view class="page__title">填写检查单</view>
         <view class="page__desc">请务必填写完整准确</view>
   </view>
-  <view class="page_here">
-<van-collapse value="{{ activeNames }}"  bind:change="onChange">
-  <van-collapse-item title="X线检查" disabled>
-    
-  </van-collapse-item>
-  <van-collapse-item title="骨密度检测" disabled>
-  
-  </van-collapse-item>
-  <van-collapse-item title="B超" name="3" disabled>
-  </van-collapse-item>
-  
-  <van-collapse-item title="尿常规" name="4" disabled>
-  </van-collapse-item>
-</van-collapse>
-</view>
+
   <view class="page__bd page__bd_spacing">
     <view class="kind-list">
       <block wx:for="{{list}}" wx:key="id" wx:if="{{item.id<5}}">

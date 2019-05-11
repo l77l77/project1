@@ -16,7 +16,7 @@ Page({
         title: "有核红细胞百分比",
         value: "0.1",
         label: "%",
-        border: "true"
+        border:"true"
       },
       {
         title: "白细胞计数",

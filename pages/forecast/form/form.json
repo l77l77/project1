@@ -4,8 +4,6 @@
     "van-cell": "../../../dist/cell/index",
     "van-cell-group": "../../../dist/cell-group/index",
     "van-field": "../../../dist/field/index",
-    "van-collapse": "../../../dist/collapse/index",
-    "van-collapse-item": "../../../dist/collapse-item/index",
     "van-button": "../../../dist/button/index"
   }
 }

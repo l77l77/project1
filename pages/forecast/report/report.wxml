@@ -23,7 +23,7 @@
 
   <view class='fullbtnview'>
       <van-button type='primary' size="large" 
-      style='width:95%;margin-bottom: 15px;' bindtap='goHome'>返回主页</van-button>
+      style='width:95%;margin-bottom: 15px;' bindtap='gopay'>点击查看详细报告</van-button>
   </view>
 
 </view>
